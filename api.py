@@ -18,13 +18,15 @@ with open("names-f.txt", "r") as f:
 @app.route("/masculino")
 def names_m():
     name_m = choice(data_m)[:-1]
-    return jsonify(nome=name_m)
+
+    return { 'name': name_m }, 200
 
 
 @app.route("/feminino")
 def names_f():
     name_f = choice(data_f)[:-1]
-    return jsonify(nome=name_f)
+
+    return { 'nome': name_f }, 200
 
 
 if __name__ == "__main__":
